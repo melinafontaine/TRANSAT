@@ -1,0 +1,47 @@
+#{set title:'INSCRIPTION' /}
+#{include 'header.html' /}
+
+#{include 'menu.html' /}
+
+#{form @inscription.sinscrire()}
+
+<div id="corp">
+
+<h1><center>Inscription</center></h1>
+
+<br><br>
+Veuillez renseigner les champs suivants afin de valider votre inscription.
+   
+<br><br><br>
+
+#{if flash.error}
+    <p style="color:#c00">
+        ${flash.error}
+    </p>
+#{/if}
+ 
+ <br><br>  			
+			<center><table>
+				<tr>
+			    	<td><label for="pseudo">Pseudo</label></td>
+			    	<td><input type="text" name="pseudo" id="pseudo" maxlength="80"/></td>
+				</tr>
+				<tr>
+			    	<td><label ofr="mail">Email</label></td>
+			    	<td><input type="text" name="mail" id="mail"  maxlength="80"/></td>
+				</tr>
+				<tr>
+			    	<td><label for="mdp">Password</label></td>
+			    	<td><input type="password" name="mdp" id="mdp" maxlength="80"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><br></td>
+				</tr>
+				<tr>
+			    	<td colspan="2" align="center"><input type="submit" class="rounded" value="Valider"/></td>
+			    </tr>
+			    
+			 </center></table>
+</div>
+#{/form}		
+#{include 'footer.html' /}

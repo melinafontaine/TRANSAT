@@ -1,0 +1,6 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+secure.username=Votre email :
+secure.password=Votre mot de passe:
+secure.signin=Se connecter ! 

@@ -1,0 +1,35 @@
+#{set title:'IDENTIFICATION' /}
+#{include 'header.html' /}
+
+#{include 'menu.html' /}
+
+#{form @secure.authenticate()}
+
+		<div id="corp">
+			<h1><center>Veuillez entrer vos identifiants</center></h1>
+			<br><br>
+			
+			<center><table>
+				<tr>
+			    	<td><label>Email</label></td>
+			    	<td><input type="text" name="username" maxlength="80"/></td>
+				</tr>
+				<tr>
+			    	<td><label>Password</label></td>
+			    	<td><input type="password" name="password" maxlength="80"/></td>
+				</tr>
+			    <td colspan="2" align="center"><input type="submit" class="rounded" value="Se connecter"/></td>
+			    
+			 </center></table>
+#{/form}
+</br>
+</br>
+Si vous n'&ecirc;tes pas encore inscrit, inscrivez-vous <a title="Accueil" href="@{Application.inscription}">ici</a>!!!!
+		</div>
+		
+#{include 'footer.html' /}
+
+
+
+
+

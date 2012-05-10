@@ -1,0 +1,145 @@
+*{padding:0;margin:0;}
+h1 {
+	font-size:22px;
+	color:#2B829E;
+}
+
+h2 {
+	font-size:18px;
+	color:#2B829E;
+}
+
+h3 {
+	font-size:14px;
+	color:#30966F;
+}
+
+body  {
+    background: #D3D3D3 url(/public/images/fond.jpg) repeat-x 0 0;
+    padding:30px 0 30px 0;
+    margin: auto;
+    text-align: center;
+    vertical-align: top;
+    color: #000;
+    font-family: verdana;
+    font-size: 12px;
+}
+
+div.all {
+    text-align:left;
+    width:702px;
+    margin : auto
+}
+
+div#header {
+    background: url(/public/images/header.jpg) no-repeat 0 0;
+    height : 114px;
+    margin : 0;
+    padding: 0;
+}
+
+div.contenu {
+    background: url(/public/images/fondcontenu.jpg) repeat-y 0 0;
+    float:left;
+}
+
+div#menu {
+    float: left;
+    width: 174px;
+}
+
+div#menu a {
+    text-decoration:none;
+    font-size:12px;  
+    color:#444444; 
+    margin-top: 5px; 
+    padding-bottom:0px;
+    padding-right:15px;
+    padding-left:45px; 
+}
+
+div#menu a:hover {
+    font-size:12px;
+    text-decoration:none;
+    font-weight:bold; 
+    margin-left: 25px;  
+    color:#194F75;
+    padding-top:5px;
+    padding-bottom:0px;
+    padding-right:0px;
+    padding-left:30px; 
+}
+
+div#menu p {
+    padding-top:2px;
+}
+
+.mrecherche {
+    background-image: url(/public/images/mrecherche.jpg);
+    width: 174px;
+    height: 26px;
+}
+
+.mhaut {
+    background-image: url(/public/images/mhaut.jpg);
+    width: 174px;
+    height: 23px;
+}
+
+.mfond {
+    background-image: url(/public/images/mfond.jpg);
+    width: 174px;
+    height: 20px;
+}
+
+div#corp {
+    margin-left: 174px;
+    padding-top:25px;
+    padding-bottom:50px;
+    padding-right:20px;
+    padding-left:10px;    
+    background-image: url(/public/images/contenu.jpg);
+    background-repeat: no-repeat;
+    width:500px;
+    font-size:12px;
+}
+
+div#corp a {
+    font-family:verdana;
+    font-size:16px;
+    color : #000000;
+    text-decoration:none;
+}
+    
+div#footer {
+    clear:both;
+    background: url(/public/images/footer.jpg) no-repeat 0 0;
+    height : 41px;
+    margin : 0;
+    padding: 0;
+}
+
+div#footer p {
+    clear:both;
+    text-align:center;
+    color : #FFFFFF;
+    font-size:0.9em;
+    padding-top:10px;
+}
+
+div#footer a {
+    text-align:center;
+    color : #FFFFFF;
+    font-size:1.0em;
+    padding-top:10px;
+    text-decoration:none;
+}
+
+div#footer a:hover {
+    text-align:center;
+    font-weight:bold; 
+    color : #FFFFFF;
+    font-size:1.0em;
+    padding-top:10px;
+    text-decoration:none;
+}
