@@ -14,7 +14,7 @@ public class Admin extends Controller {
     static void setConnectedUser() {
         if(Security.isConnected()) {
             Utilisateur user = Utilisateur.find("byEmail", Security.connected()).first();
-            renderArgs.put("user", user.pseudo);
+            renderArgs.put("user", user);
         }
     }
  
@@ -24,6 +24,10 @@ public class Admin extends Controller {
     
     public static void courses() {
         render();
+    }
+    
+    public static void editerCompte(){
+    	render();
     }
     
 }

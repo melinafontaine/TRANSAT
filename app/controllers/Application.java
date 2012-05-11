@@ -23,4 +23,10 @@ public class Application extends Controller {
     public static void courses(){
     	render();
     }
+    
+    public static void creationBateau(){
+    	render();
+    }
+    
+   
 }

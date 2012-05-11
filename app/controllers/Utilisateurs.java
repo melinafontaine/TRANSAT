@@ -4,5 +4,5 @@ import play.mvc.*;
 
 @With(Secure.class)
 public class Utilisateurs extends CRUD{
-
+	
 }

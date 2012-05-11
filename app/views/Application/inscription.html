@@ -19,16 +19,21 @@ Veuillez renseigner les champs suivants afin de valider votre inscription.
         ${flash.error}
     </p>
 #{/if}
- 
- <br><br>  			
+ <br>		
 			<center><table>
 				<tr>
 			    	<td><label for="pseudo">Pseudo</label></td>
 			    	<td><input type="text" name="pseudo" id="pseudo" maxlength="80"/></td>
 				</tr>
 				<tr>
+					<td colspan="2" align="center"><br></td>
+				</tr>
+				<tr>
 			    	<td><label ofr="mail">Email</label></td>
 			    	<td><input type="text" name="mail" id="mail"  maxlength="80"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><br></td>
 				</tr>
 				<tr>
 			    	<td><label for="mdp">Password</label></td>
@@ -38,10 +43,63 @@ Veuillez renseigner les champs suivants afin de valider votre inscription.
 					<td colspan="2" align="center"><br></td>
 				</tr>
 				<tr>
-			    	<td colspan="2" align="center"><input type="submit" class="rounded" value="Valider"/></td>
+			    	<td><label for="nomBateau">Nom du bateau</label></td>
+			    	<td><input type="text" name="nomBateau" id="nomBateau" maxlength="80"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><br></td>
+				</tr>
+				</table>
+				
+				<div id="trimaran">
+	        	<div  id="voile">
+		            <IMG SRC="/public/images/voile.gif" ALT="trimaran" width="300px" height="157px" TITLE="Voile"/>
+	        	</div>
+	        <div id="coque">
+	            <IMG SRC="/public/images/coque.gif" ALT="trimaran" width="300px" TITLE="coque"/>
+	        </div>
+        
+    	</div>
+			
+			<table>
+				<tr>
+					<td colspan="2" align="center"><br></td>
+				</tr>
+				<tr>
+			    	<td><label for="voile">Couleur des voiles</label></td>
+			    	<td><select name="voile" id="voile" onchange="changecouleurVoile(this.options[this.selectedIndex].value)">
+			    		<OPTION value="blue">bleu</OPTION>
+						<OPTION value="white">blanc</OPTION>
+						<OPTION value="red">rouge</OPTION>
+						<OPTION value="yellow">jaune</OPTION>
+						<OPTION value="pink">rose</OPTION>
+						<OPTION value="black">noir</OPTION>
+			    		</select>
+	    			</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><br></td>
+				</tr>
+				<tr height="20px">
+			    	<td><label for="coque">Couleur de la coque</label></td>
+			    	<td><select name="coque" id="coque" onchange="changecouleurCoque(this.options[this.selectedIndex].value)" >
+			    		<OPTION value="blue">bleu</OPTION>
+						<OPTION value="white">blanc</OPTION>
+						<OPTION value="red">rouge</OPTION>
+						<OPTION value="yellow">jaune</OPTION>
+						<OPTION value="pink">rose</OPTION>
+						<OPTION value="black">noir</OPTION>
+			    		</select>
+			    	</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><br></td>
+				</tr>
+				<tr>
+			    	<td colspan="2" align="center"><input type="submit" class="rounded"  style="width:75px" value="Valider"/></td>
 			    </tr>
-			    
-			 </center></table>
+			    </table>
+			 </center>
 </div>
 #{/form}		
 #{include 'footer.html' /}

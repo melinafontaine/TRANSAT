@@ -104,6 +104,24 @@ div#corp {
     font-size:12px;
 }
 
+div#trimaran {   
+    width:300px;
+    position :relative; 
+    height:191px;
+    background-color:#FFFFFF;
+}
+
+div#voile {   
+    height:157px;
+    position: relative;
+
+}
+div#coque {   
+    height:34px;
+    position: absolute;
+
+}
+
 div#corp a {
     font-family:verdana;
     font-size:16px;

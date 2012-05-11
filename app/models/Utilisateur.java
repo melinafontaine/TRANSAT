@@ -19,12 +19,24 @@ public class Utilisateur extends Model{
 	    @Required
 	    public String pseudo;
 	    
+	    @Required
+		public String nomBateau;
+		
+		@Required
+		public String couleurVoile;
+		
+		@Required
+		public String couleurcoque;
+	    
 	    public boolean admin;
 	    
-	    public Utilisateur(String email, String password, String pseudo) {
+	    public Utilisateur(String email, String password, String pseudo, String nomBateau, String voile, String coque) {
 	    	this.email = email;
 	        this.password = password;
 	        this.pseudo=pseudo;
+	        this.nomBateau = nomBateau;
+	        this.couleurVoile=voile;
+	        this.couleurcoque=coque;
 	        admin=false;
 	    }
 	    
@@ -35,5 +47,7 @@ public class Utilisateur extends Model{
 	    public static Utilisateur connect(String email, String password) {
 	        return find("byEmailAndPassword", email, password).first();
 	    }
+	    
+	    
 	 
 	}
