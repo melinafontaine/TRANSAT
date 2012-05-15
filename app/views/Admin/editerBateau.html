@@ -1,0 +1,81 @@
+#{set title:'TRANSAT - Mon Bateau - Modifier' /}
+#{include 'header.html' /}
+
+#{include 'menu_connecte.html' /}
+
+#{form @inscription.editerBateau()}
+<div id="corp">
+
+<h1><center>Modifier mon bateau</center></h1>
+
+<br><br>
+
+#{if flash.error}
+    <p style="color:#c00">
+        ${flash.error}
+    </p>
+#{/if}
+ <br> 
+ 
+ <input type="hidden" name="user.id" value="${user.id}" />
+	<center>
+	<table>
+		<tr>
+			<td><label for="nomBateau">Nom du bateau</label></td>
+			<td>	
+				<input type="text" name="nomBateau" value="${user?.nomBateau}" />
+	    		<span class="error">#{error 'user.pseudo' /}</span>
+    		</td>
+	    </tr>
+	    <tr></tr>
+		<tr>
+			    	<td><label for="couleurVoile">Couleur des voiles</label></td>
+			    	<td><select name="couleurVoile" id="ouleurVoile" onchange="changecouleurVoile(this.options[this.selectedIndex].value)">
+			    		<OPTION value="blue">bleu</OPTION>
+						<OPTION value="white">blanc</OPTION>
+						<OPTION value="red">rouge</OPTION>
+						<OPTION value="yellow">jaune</OPTION>
+						<OPTION value="pink">rose</OPTION>
+						<OPTION value="black">noir</OPTION>
+			    		</select>
+	    			</td>
+				</tr>
+				<tr>
+					
+				</tr>
+				<tr height="20px">
+			    	<td><label for="couleurcoque">Couleur de la coque</label></td>
+			    	<td><select name="couleurcoque" id="couleurcoque" onchange="changecouleurCoque(this.options[this.selectedIndex].value)" >
+			    		<OPTION value="blue">bleu</OPTION>
+						<OPTION value="white">blanc</OPTION>
+						<OPTION value="red">rouge</OPTION>
+						<OPTION value="yellow">jaune</OPTION>
+						<OPTION value="pink">rose</OPTION>
+						<OPTION value="black">noir</OPTION>
+			    		</select>
+			    	</td>
+				</tr>
+	    <tr></tr>
+	</table>
+	<br>
+	<div id="trimaran">
+	        	<div style="background-color:${user.couleurVoile}"  id="voile">
+		            <IMG SRC="/public/images/voile.gif" ALT="trimaran" width="300px" height="157px" TITLE="Voile"/>
+	        	</div>
+	        <div style="background-color:${user.couleurcoque}" id="coque">
+	            <IMG SRC="/public/images/coque.gif" ALT="trimaran" width="300px" TITLE="coque"/>
+	        </div>
+    	</div>
+    	
+    	<table>
+				<tr>
+					<td colspan="2" align="center"><br></td>
+				</tr>
+				
+				</table>
+	<input type="submit" class="rounded" style="width:75px" value="Valider"/>
+	</center>
+
+</div>	
+#{/form}	
+#{include 'footer.html' /}

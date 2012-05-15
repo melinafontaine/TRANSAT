@@ -30,4 +30,8 @@ public class Admin extends Controller {
     	render();
     }
     
+    public static void editerBateau(){
+    	render();
+    }
+    
 }

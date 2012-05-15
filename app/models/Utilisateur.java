@@ -48,6 +48,20 @@ public class Utilisateur extends Model{
 	        return find("byEmailAndPassword", email, password).first();
 	    }
 	    
+	    public List<Post> getRecentsPosts() {
+	        return Post.find("postedBy = ? order by postedAt", this).fetch(1, 10);
+	    }
+
+	    public Long getPostsCount() {
+	        return Post.count("postedBy", this);
+	    }
+
+	    public Long getTopicsCount() {
+	        return Post.count("select count(distinct t) from Topic t, Post p, User u where p.postedBy = ? and p.topic = t", this);
+	    }
 	    
+	    public boolean isAdmin() {
+	        return email.equals(Play.configuration.getProperty("forum.adminEmail", ""));
+	    }
 	 
 	}

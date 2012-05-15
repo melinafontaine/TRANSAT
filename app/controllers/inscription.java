@@ -43,20 +43,45 @@ public class inscription extends Controller{
 		}
 	}
 	
-	public static void sauvegardermoncompte(@Required @Valid Utilisateur usr) {
+	public static void sauvegardermoncompte(String pseudo,String password) {
 		 
 		if(Security.isConnected()) {
-	            Utilisateur user = Utilisateur.find("byEmail", Security.connected()).first();
-	            renderArgs.put("user", user);
-	    }
-		 if (validation.hasErrors()) {
-				// add http parameters to the flash scope
-				params.flash();
-			} else {
-				usr.save(); // explicit save here
-				flash.success("Sauvegarde réussie");
-			}
+            Utilisateur user = Utilisateur.find("byEmail", Security.connected()).first();
+            renderArgs.put("user", user);
+		} 
+		
+		Utilisateur user = Utilisateur.find("byEmail", Security.connected()).first();
+        
+		if (validation.hasErrors()) {
+			// add http parameters to the flash scope
+			params.flash();
+		}else {
+				user.pseudo = pseudo;
+				user.password = password;
+				user.save();
+		}
+		render("Admin/index.html");
+	}
+	
+	public static void editerBateau(String nomBateau, String couleurVoile, String couleurcoque)
+	{
+		if(Security.isConnected()) {
+            Utilisateur user = Utilisateur.find("byEmail", Security.connected()).first();
+            renderArgs.put("user", user);
+		}
 		 
+		Utilisateur user = Utilisateur.find("byEmail", Security.connected()).first();
+
+		if (validation.hasErrors()) {
+			// add http parameters to the flash scope
+			params.flash();
+		} else {
+			user.couleurcoque = couleurcoque;
+			user.couleurVoile = couleurVoile;
+			user.nomBateau = nomBateau;
+			user.save();
+		}
 		render("Admin/index.html");
 	}
 }
+

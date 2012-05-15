@@ -7,8 +7,16 @@ import models.*;
 
 
 public class Application extends Controller {
-
-    public static void index() {
+	
+	static Integer pageSize = Integer.parseInt(Play.configuration.getProperty("forum.pageSize", "10"));
+    
+	@Before
+    static void globals() {
+        renderArgs.put("connected", connectedUser());
+        renderArgs.put("pageSize", pageSize);
+    }
+	
+	public static void index() {
         render();
     }
     
@@ -24,9 +32,13 @@ public class Application extends Controller {
     	render();
     }
     
-    public static void creationBateau(){
-    	render();
+    static void connect(Utilisateur user) {
+        session.put("logged", user.id);
     }
     
+    static Utilisateur connectedUser() {
+        String userId = session.get("logged");
+        return userId == null ? null : (Utilisateur) Utilisateur.findById(Long.parseLong(userId));
+    }
    
 }

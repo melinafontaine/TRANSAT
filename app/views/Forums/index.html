@@ -1,0 +1,60 @@
+#{set title:'Forum' /}
+#{include 'header.html' /}
+
+#{include 'menu_connecte.html' /}
+
+<div id="corp">
+
+<h1><center>Forums</center></h1>
+
+<br><br>
+
+<table>
+	<thead>
+		<tr>
+			<td width="400px"><b>Nom du forum</b></th>
+			<th class="infos">Last post</th>
+		</tr>
+	</thead>
+	#{list items:forums, as:'forum'}
+		<tr>
+			<td>
+				<a href="@{Forums.show(forum.id)}">${forum.name}</a>
+				<p class="light">
+					 #{pluralize size:forum.postsCount, word:'post' /} in #{pluralize size:forum.topicsCount, word:'topic' /}
+				</p>
+			</td>
+			<td class="infos">
+				#{if forum.lastPost}
+					${forum.lastPost.postedAt.since()} <br /> 
+					by <strong>${forum.lastPost.postedBy.pseudo}</strong> 
+				#{/if}
+				#{else}
+					No post
+				#{/else}
+			</td>
+		</tr>
+	#{/list}
+</table>
+
+#{if connected?.admin}
+	<div id="youreadmin">
+		Administrator options
+	</div>
+
+	<div class="box">
+		<h2>Create a new forum</h2>
+		<form action="@{Forums.create}" method="POST">
+			<input type="text" name="name" size="30" id="name" /> <span class="error">#{error 'name' /}</span>
+			
+			<label for="description">Set a description</label>
+			<textarea name="description" rows="6" id="description">${flash.description}</textarea>
+			<hr />
+			<input type="submit" value="Add this forum" id="addForum" />
+		</form>
+	</div>
+#{/if}
+
+</div>	
+#{include 'footer.html' /}
+
