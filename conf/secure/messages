@@ -1,0 +1,7 @@
+secure.title=
+secure.username=Email :
+secure.password=Mot de passe :
+secure.remember=Se souvenir de moi
+secure.signin=Connectez vous!
+secure.error=Oops, votre email ou mot de passe n'est pas reconnu.
+secure.logout=Vous avez été déconnecté.
